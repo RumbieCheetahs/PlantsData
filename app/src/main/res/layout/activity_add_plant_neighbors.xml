@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d9dfe0"
+    tools:context=".AddPlantNeighbors"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="24dp">
+                <ImageView
+                    android:id="@+id/homeIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:tint="#F24BC84D"
+                    android:src="@drawable/ic_add"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Add neighbouring plants"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/treeCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_below="@id/layout"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_photo"
+                        android:drawableStart="@drawable/ic_photo"
+                        android:padding="16dp"
+                        android:textAllCaps="false"
+                        android:onClick="addNeighbour"
+                        android:background="#F24BC84D"
+                        android:text="Tunamba kutja u perende omuti wo meņe"/>
+                    <ImageView
+                        android:id="@+id/treeImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:onClick="addNeighbour"
+                        android:src="@drawable/surrounding"
+                        android:scaleType="centerCrop"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <EditText
+                android:id="@+id/neighbour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter neighbouring plant's name"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:padding="12dp"
+                android:drawableLeft="@drawable/ic_add"
+                android:drawableTint="#F24BC84D"
+                android:drawablePadding="12dp"
+                android:layout_below="@id/treeCardView"/>
+            <EditText
+                android:id="@+id/occurrance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter number of existence"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:padding="12dp"
+                android:inputType="number"
+                android:drawableLeft="@drawable/ic_add"
+                android:drawableTint="#F24BC84D"
+                android:drawablePadding="12dp"
+                android:layout_below="@id/neighbour"
+                android:drawableStart="@drawable/ic_add" />
+
+            <Button
+                android:id="@+id/proceedOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Proceed : Next"
+                android:drawableRight="@drawable/ic_next"
+                android:padding="16dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="48dp"
+                android:textAllCaps="false"
+                android:onClick="next"
+                android:background="#F24BC84D"
+                android:layout_below="@id/occurrance"
+                android:gravity="center_horizontal"
+                android:drawableEnd="@drawable/ic_next" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

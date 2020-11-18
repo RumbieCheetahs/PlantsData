@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Plants Data</string>
+
+    <string-array name="plantStatus">
+        <item> Ongaro yo womuti</item>
+        <item>Omuveruke no  munamuinyo</item>
+        <item>Omuvereke mara mau koka.</item>
+        <item>Wakoka</item>
+    </string-array>
+</resources>

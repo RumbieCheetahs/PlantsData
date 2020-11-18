@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPlant"
+    android:background="#d9dfe0"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="24dp">
+                    <ImageView
+                        android:id="@+id/homeIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:tint="#F24BC84D"
+                        app:srcCompat="@drawable/ic_add"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Add new tree image"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="16dp"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="16dp" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/treeCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_below="@id/layout"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_photo"
+                            android:drawableStart="@drawable/ic_photo"
+                            android:padding="16dp"
+                            android:onClick="newTree"
+                            android:textAllCaps="false"
+                            android:background="#F24BC84D"
+                            android:text="Tuna mba kutja u perende otjiperendero tjomuti"/>
+                        <ImageView
+                            android:id="@+id/treeImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            app:srcCompat="@drawable/ic_mopani_tree"
+                            android:onClick="newTree"
+                            android:scaleType="centerCrop"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <EditText
+                    android:id="@+id/treeName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/treeCardView"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:hint="Ena romuti...."
+                    android:textColor="#000000"
+                    android:padding="12dp" />
+
+                <TextView
+                    android:id="@+id/dateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/treeName"
+                    android:layout_marginTop="16dp"
+                    android:padding="8dp"
+                    android:text="Date"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="16dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:drawableTint="#F24BC84D"
+                    android:drawableStart="@drawable/ic_date"
+                    android:drawableLeft="@drawable/ic_date" />
+
+                <Button
+                    android:id="@+id/proceedOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Proceed : Next"
+                    android:drawableRight="@drawable/ic_next"
+                    android:padding="16dp"
+                    android:onClick="next"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginRight="70dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginBottom="48dp"
+                    android:background="#F24BC84D"
+                    android:elevation="0dp"
+                    android:layout_below="@id/dateTime"
+                    android:gravity="center_horizontal"/>
+            </RelativeLayout>
+        </ScrollView>
+
+</RelativeLayout>

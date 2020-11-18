@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d9dfe0"
+    tools:context=".AddPersonDetails"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="24dp">
+                <ImageView
+                    android:id="@+id/homeIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/ic_himba_woman"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Add person's details"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/treeCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_below="@id/layout"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_photo"
+                        android:drawableStart="@drawable/ic_photo"
+                        android:padding="16dp"
+                        android:onClick="addPerson"
+                        android:textAllCaps="false"
+                        android:background="#F24BC84D"
+                        android:text="Tuna mba kutja u riperende tjoye omun"/>
+                    <ImageView
+                        android:id="@+id/treeImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:onClick="addPerson"
+                        app:srcCompat="@drawable/ic_himba_woman"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <EditText
+                android:id="@+id/neighbour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter your name"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:padding="12dp"
+                android:drawableLeft="@drawable/ic_person"
+                android:drawableTint="#F24BC84D"
+                android:drawablePadding="12dp"
+                android:layout_below="@id/treeCardView"
+                android:drawableStart="@drawable/ic_person" />
+
+            <Button
+                android:id="@+id/proceedOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Proceed : Finish Upload"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:padding="16dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="48dp"
+                android:background="#F24BC84D"
+                android:drawableRight="@drawable/ic_upload"
+                android:onClick="next"
+                android:layout_below="@id/neighbour"
+                android:gravity="center_horizontal"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
