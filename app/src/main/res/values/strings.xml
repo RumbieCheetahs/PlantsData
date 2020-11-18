@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Plants Data</string>
+    <string name="app_name">Plants Data Himba</string>
 
     <string-array name="plantStatus">
         <item> Ongaro yo womuti</item>
