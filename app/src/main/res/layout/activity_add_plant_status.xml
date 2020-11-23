@@ -29,7 +29,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="Add surrounding soil &amp; tree status"
+                    android:text="@string/soil"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_marginLeft="16dp"
@@ -59,7 +59,7 @@
                         android:textAllCaps="false"
                         android:onClick="addSoil"
                         android:background="#F24BC84D"
-                        android:text="Tuna mba kutja u perende otjiperendero tjehi."/>
+                        android:text="@string/soil_instruction"/>
                     <ImageView
                         android:id="@+id/treeImage"
                         android:layout_width="match_parent"
@@ -148,24 +148,26 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Record audio (reason for dying)"
+                    android:text="@string/record_audio"
                     android:drawablePadding="12dp"
                     android:padding="12dp"
                     android:textStyle="bold"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:drawableLeft="@drawable/ic_arrow_downward"
-                    android:drawableTint="@color/colorPrimary"/>
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawableStart="@drawable/ic_arrow_downward" />
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Play recorded audio"
+                    android:text="@string/play_audio"
                     android:textStyle="bold"
                     android:drawablePadding="12dp"
                     android:padding="12dp"
                     android:drawableLeft="@drawable/ic_arrow_downward"
-                    android:drawableTint="@color/colorPrimary"/>
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawableStart="@drawable/ic_arrow_downward" />
             </LinearLayout>
             <ImageButton
                 android:id="@+id/mic"
@@ -317,7 +319,7 @@
                 android:id="@+id/proceedOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Proceed : Next"
+                android:text="Kaende : Next"
                 android:drawableRight="@drawable/ic_next"
                 android:padding="16dp"
                 android:layout_marginLeft="70dp"

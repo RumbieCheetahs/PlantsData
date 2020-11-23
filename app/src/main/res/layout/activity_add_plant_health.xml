@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:id="@+id/layout"
                 android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="Add tree leaf &amp; tree dimensions"
+                    android:text="@string/tree_leaf"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_marginLeft="16dp"
@@ -58,7 +58,7 @@
                         android:padding="16dp"
                         android:textAllCaps="false"
                         android:background="#F24BC84D"
-                        android:text="Tuna mba kutja u perende otjiperendero tjotjiyao"/>
+                        android:text="@string/leaf_instruction"/>
                     <ImageView
                         android:id="@+id/treeImage"
                         android:layout_width="match_parent"
@@ -75,7 +75,7 @@
                 android:id="@+id/dimensionsHeading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Plant's Dimensions"
+                android:text="@string/plant_dimensions"
                 android:layout_marginTop="12dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:padding="12dp"
                     android:inputType="numberDecimal"
-                    android:hint="Omuseka womuti...."/>
+                    android:hint="@string/plant_height"/>
 
             </LinearLayout>
             <LinearLayout
@@ -125,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:padding="12dp"
                     android:inputType="numberDecimal"
-                    android:hint="Ongondoroka yo tjiunda...."/>
+                    android:hint="@string/plant_circumference"/>
 
             </LinearLayout>
 
@@ -133,7 +133,7 @@
                 android:id="@+id/numberOfStems"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Number of stems"
+                android:text="@string/number_of_stems"
                 android:layout_marginTop="12dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
@@ -205,7 +205,7 @@
                 android:id="@+id/typeOfInsects"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Insect types"
+                android:text="@string/insect_types_head"
                 android:layout_marginTop="12dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
@@ -232,7 +232,7 @@
                     android:padding="12dp"
                     android:inputType="text"
                     android:textColor="#000000"
-                    android:hint="Ena roupuka mburi komuti...."/>
+                    android:hint="@string/insect_types"/>
 
             </LinearLayout>
 
@@ -240,7 +240,7 @@
                 android:id="@+id/proceedOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Proceed : Next"
+                android:text="Kaende : Next"
                 android:drawableRight="@drawable/ic_next"                android:padding="16dp"
                 android:layout_marginLeft="70dp"
                 android:layout_marginRight="70dp"

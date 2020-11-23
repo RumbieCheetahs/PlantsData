@@ -1,8 +1,32 @@
 <resources>
     <string name="app_name">Plants Data Himba</string>
+    <string name="plant_instruction">Tuna mba kutja u perende otjiperendero tjomuti</string>
+    <string name="plant_name">Ena romuti....</string>
+    <string name="person_image_instruction">Tuna mba kutja u riperende tjoye omun</string>
+    <string name="person_name">Hitisa ena roye</string>
+    <string name="finish_upload">Kaende : Wamana Okutwako</string>
+    <string name="add_person">Twako oviune vyee</string>
+    <string name="leaf_instruction">Tuna mba kutja u perende otjiperendero tjotjiyao</string>
+    <string name="plant_height">Omuseka womuti....</string>
+    <string name="plant_circumference">Ongondoroka yo tjiunda....</string>
+    <string name="insect_types">Ena roupuka mburi komuti....</string>
+    <string name="tree_leaf">Twako omikato vyotjiyao nomuti</string>
+    <string name="neighbor">Twako omiti omirara nganda</string>
+    <string name="neighbor_name">Hitisa omana omiti omirara nganda</string>
+    <string name="existence">Hitisa onomora yo vitjitwa mbyatjitwa mbo</string>
+    <string name="neighbor_instruction">Tunamba kutja u perende omuti wo meņe</string>
+    <string name="soil">Ehi nomuti twako ongondorok ongaro poruveze ndo</string>
+    <string name="soil_instruction">Tuna mba kutja u perende otjiperendero tjehi.</string>
+    <string name="home">Onganda</string>
+    <string name="plant_dimensions">Omukato womiti</string>
+    <string name="number_of_stems">Ozonomora zoviunda</string>
+    <string name="insect_types_head">Omihoko vyoupuka</string>
+    <string name="record_audio">Kapura ombosiro (Ondando yokuta)</string>
+    <string name="play_audio">Nyandisa ombosiro ndjamburwa</string>
+    <string name="add_new_tree">Twako otjiperendero otjipe tjomuti</string>
 
     <string-array name="plantStatus">
-        <item> Ongaro yo womuti</item>
+        <item>Ongaro yo womuti</item>
         <item>Omuveruke no  munamuinyo</item>
         <item>Omuvereke mara mau koka.</item>
         <item>Wakoka</item>

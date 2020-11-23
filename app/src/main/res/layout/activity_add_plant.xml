@@ -30,7 +30,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:text="Add new tree image"
+                        android:text="@string/add_new_tree"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginLeft="16dp"
@@ -61,7 +61,7 @@
                             android:onClick="newTree"
                             android:textAllCaps="false"
                             android:background="#F24BC84D"
-                            android:text="Tuna mba kutja u perende otjiperendero tjomuti"/>
+                            android:text="@string/plant_instruction"/>
                         <ImageView
                             android:id="@+id/treeImage"
                             android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                     android:layout_marginTop="24dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:hint="Ena romuti...."
+                    android:hint="@string/plant_name"
                     android:textColor="#000000"
                     android:padding="12dp" />
 
@@ -105,7 +105,7 @@
                     android:id="@+id/proceedOne"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Proceed : Next"
+                    android:text="Kaende : Next"
                     android:drawableRight="@drawable/ic_next"
                     android:padding="16dp"
                     android:onClick="next"

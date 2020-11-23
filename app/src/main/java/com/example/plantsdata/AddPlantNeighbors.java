@@ -6,12 +6,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -39,7 +37,7 @@ public class AddPlantNeighbors extends AppCompatActivity {
 
         mImageView = findViewById(R.id.treeImage);
         name = findViewById(R.id.neighbour);
-        occurrences = findViewById(R.id.occurrance);
+        occurrences = findViewById(R.id.occurrence);
         mDatabaseHandler = new DatabaseHandler(this);
     }
 

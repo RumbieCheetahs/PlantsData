@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:id="@+id/layout"
                 android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="Add person's details"
+                    android:text="@string/add_person"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_marginLeft="16dp"
@@ -58,7 +58,7 @@
                         android:onClick="addPerson"
                         android:textAllCaps="false"
                         android:background="#F24BC84D"
-                        android:text="Tuna mba kutja u riperende tjoye omun"/>
+                        android:text="@string/person_image_instruction"/>
                     <ImageView
                         android:id="@+id/treeImage"
                         android:layout_width="match_parent"
@@ -72,7 +72,7 @@
                 android:id="@+id/neighbour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter your name"
+                android:hint="@string/person_name"
                 android:layout_marginTop="32dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
@@ -87,7 +87,7 @@
                 android:id="@+id/proceedOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Proceed : Finish Upload"
+                android:text="@string/finish_upload"
                 android:textAllCaps="false"
                 android:textSize="16sp"
                 android:padding="16dp"
@@ -99,7 +99,8 @@
                 android:drawableRight="@drawable/ic_upload"
                 android:onClick="next"
                 android:layout_below="@id/neighbour"
-                android:gravity="center_horizontal"/>
+                android:gravity="center_horizontal"
+                android:drawableEnd="@drawable/ic_upload" />
         </RelativeLayout>
     </ScrollView>
 

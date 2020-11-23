@@ -25,11 +25,11 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:tint="#F24BC84D"
-                    android:src="@drawable/ic_add"/>
+                    app:srcCompat="@drawable/ic_add"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="Add neighbouring plants"
+                    android:text="@string/neighbor"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_marginLeft="16dp"
@@ -59,7 +59,7 @@
                         android:textAllCaps="false"
                         android:onClick="addNeighbour"
                         android:background="#F24BC84D"
-                        android:text="Tunamba kutja u perende omuti wo meņe"/>
+                        android:text="@string/neighbor_instruction"/>
                     <ImageView
                         android:id="@+id/treeImage"
                         android:layout_width="match_parent"
@@ -74,7 +74,7 @@
                 android:id="@+id/neighbour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter neighbouring plant's name"
+                android:hint="@string/neighbor_name"
                 android:layout_marginTop="32dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
@@ -84,10 +84,10 @@
                 android:drawablePadding="12dp"
                 android:layout_below="@id/treeCardView"/>
             <EditText
-                android:id="@+id/occurrance"
+                android:id="@+id/occurrence"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter number of existence"
+                android:hint="@string/existence"
                 android:layout_marginTop="32dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
@@ -103,7 +103,7 @@
                 android:id="@+id/proceedOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Proceed : Next"
+                android:text="Kaende : Next"
                 android:drawableRight="@drawable/ic_next"
                 android:padding="16dp"
                 android:layout_marginLeft="70dp"
@@ -113,7 +113,7 @@
                 android:textAllCaps="false"
                 android:onClick="next"
                 android:background="#F24BC84D"
-                android:layout_below="@id/occurrance"
+                android:layout_below="@id/occurrence"
                 android:gravity="center_horizontal"
                 android:drawableEnd="@drawable/ic_next" />
         </RelativeLayout>
