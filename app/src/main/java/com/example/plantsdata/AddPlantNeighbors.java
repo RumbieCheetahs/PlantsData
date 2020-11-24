@@ -29,6 +29,7 @@ public class AddPlantNeighbors extends AppCompatActivity {
     EditText name, occurrences;
     private DatabaseHandler mDatabaseHandler;
     private Bitmap mCaptureImage;
+    long total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,8 @@ public class AddPlantNeighbors extends AppCompatActivity {
         name = findViewById(R.id.neighbour);
         occurrences = findViewById(R.id.occurrence);
         mDatabaseHandler = new DatabaseHandler(this);
+
+        total = mDatabaseHandler.getProfilesCount() - 1;
     }
 
     public void next(View view){
@@ -112,7 +115,7 @@ public class AddPlantNeighbors extends AppCompatActivity {
                 int occur = Integer.parseInt(occurrences.getText().toString().trim());
 
                 // TODO submit data to database;
-                mDatabaseHandler.neighborImage(new Neighbour(mCaptureImage, name.getText().toString(),occur));
+                mDatabaseHandler.neighborImage(new Neighbour(mCaptureImage, name.getText().toString(),occur, (int) total));
             } else {
                 Toast.makeText(this, "Please add image and Image name", Toast.LENGTH_SHORT).show();
             }

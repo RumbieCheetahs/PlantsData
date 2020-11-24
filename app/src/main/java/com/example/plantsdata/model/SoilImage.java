@@ -9,13 +9,17 @@ public class SoilImage {
     String fruit;
     String flower;
     String leaves;
+    double latitude;
+    double longtitude;
 
-    public SoilImage(Bitmap soil, String plantHealth, String fruit, String flower, String leaves) {
+    public SoilImage(Bitmap soil, String plantHealth, String fruit, String flower, String leaves, double latitude, double longtitude) {
         this.soil = soil;
         this.plantHealth = plantHealth;
         this.fruit = fruit;
         this.flower = flower;
         this.leaves = leaves;
+        this.latitude = latitude;
+        this.longtitude = longtitude;
     }
 
     public Bitmap getSoil() {
@@ -56,5 +60,21 @@ public class SoilImage {
 
     public void setLeaves(String leaves) {
         this.leaves = leaves;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongtitude() {
+        return longtitude;
+    }
+
+    public void setLongtitude(double longtitude) {
+        this.longtitude = longtitude;
     }
 }

@@ -80,7 +80,6 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:textColor="#000000"
-                android:visibility="invisible"
                 android:layout_below="@id/treeCardView"/>
 
             <LinearLayout
@@ -91,16 +90,17 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
-                android:layout_below="@id/locationHeading"
-                android:visibility="invisible">
+                android:layout_below="@id/locationHeading">
                 <TextView
+                    android:id="@+id/latitude"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Longtitude"
+                    android:text="Latitude"
                     android:padding="12dp"
                     android:textColor="#000000"/>
                 <TextView
+                    android:id="@+id/longitude"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

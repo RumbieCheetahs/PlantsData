@@ -2,6 +2,7 @@ package com.example.plantsdata.model;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
@@ -16,7 +17,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final int DB_VERSION = 1;
 
     // Database tables
-    private static final String TABLE_ONE = "plantTable";
+    private static final String TABLE_ONE = "plant";
     private static final String TABLE_TWO = "leafTable";
     private static final String TABLE_THREE = "soilTable";
     private static final String TABLE_FOUR = "neighbour";
@@ -53,9 +54,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     "plantStatus TEXT, "+
                     "fruit TEXT, "+
                     "flower TEXT, "+
-                    "leaves TEXT);";
+                    "leaves TEXT, "+
+                    "latitude DOUBLE, "+
+                    "longtitude DOUBLE);";
             String query4 = "CREATE TABLE IF NOT EXISTS "+ TABLE_FOUR +" (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                    "plant_id INTEGER, "+
                     "neighborImage BLOB, "+
                     "nameOfNeighbour TEXT, "+
                     "occurrences INTEGER);";
@@ -79,6 +83,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
 
+    public long getProfilesCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        long count = DatabaseUtils.queryNumEntries(db, TABLE_ONE);
+        db.close();
+        return count;
+    }
+
     public void storePlant(TreeImage treeImage) {
         try {
             SQLiteDatabase db = this.getWritableDatabase();
@@ -93,7 +104,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             objectContentValues.put("treeName", treeImage.getTreeName());
             objectContentValues.put("date", treeImage.getDate());
 
-            long checkIfQueryRuns = db.insert("plantTable", null, objectContentValues);
+            long checkIfQueryRuns = db.insert("plant", null, objectContentValues);
             if (checkIfQueryRuns != -1){
                 Toast.makeText(context, "Data added into our table", Toast.LENGTH_SHORT).show();
                 db.close();
@@ -148,6 +159,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             objectContentValues.put("fruit", soilImage.getFruit());
             objectContentValues.put("flower", soilImage.getFlower());
             objectContentValues.put("leaves", soilImage.getLeaves());
+            objectContentValues.put("latitude", soilImage.getLatitude());
+            objectContentValues.put("longtitude", soilImage.getLongtitude());
 
             long checkIfQueryRuns = db.insert("soilTable", null, objectContentValues);
             if (checkIfQueryRuns != -1){
@@ -196,6 +209,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
             imageInBytes = objectByteArrayOutputStream.toByteArray();
             ContentValues objectContentValues = new ContentValues();
+            objectContentValues.put("plant_id", neighbour.getPlant_id());
             objectContentValues.put("neighborImage", imageInBytes);
             objectContentValues.put("nameOfNeighbour", neighbour.getName());
             objectContentValues.put("occurrences", neighbour.getOccurrences());

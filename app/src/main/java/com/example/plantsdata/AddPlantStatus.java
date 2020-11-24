@@ -27,6 +27,7 @@ import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.plantsdata.model.DatabaseHandler;
@@ -54,6 +55,11 @@ public class AddPlantStatus extends AppCompatActivity {
     String pathSave = "";
     MediaRecorder mMediaRecorder;
     MediaPlayer mMediaPlayer;
+
+    private GpsTracker gpsTracker;
+    private TextView tvLatitude,tvLongitude;
+    private double mLatitude;
+    private double mLongitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -172,6 +178,27 @@ public class AddPlantStatus extends AppCompatActivity {
 
         mDatabaseHandler = new DatabaseHandler(this);
 
+        tvLatitude = (TextView)findViewById(R.id.latitude);
+        tvLongitude = (TextView)findViewById(R.id.longitude);
+
+        try {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        gpsTracker = new GpsTracker(AddPlantStatus.this);
+        if(gpsTracker.canGetLocation()){
+            mLatitude = gpsTracker.getLatitude();
+            mLongitude = gpsTracker.getLongitude();
+            tvLatitude.setText(String.valueOf(mLatitude));
+            tvLongitude.setText(String.valueOf(mLongitude));
+        }else{
+            gpsTracker.showSettingsAlert();
+        }
+
     }
 
     public void next(View view){
@@ -272,7 +299,7 @@ public class AddPlantStatus extends AppCompatActivity {
             if (mImageView.getDrawable() != null){
 
                 // TODO submit data to database;
-                mDatabaseHandler.soilImage(new SoilImage(mCaptureImage, status, hasFruit, hasFlower, hasLeaves));
+                mDatabaseHandler.soilImage(new SoilImage(mCaptureImage, status, hasFruit, hasFlower, hasLeaves, mLatitude, mLongitude));
             } else {
                 Toast.makeText(this, "Please add image and Image name", Toast.LENGTH_SHORT).show();
             }
@@ -326,4 +353,5 @@ public class AddPlantStatus extends AppCompatActivity {
 
         return write_external_storage_result == PackageManager.PERMISSION_GRANTED && record_audio_result == PackageManager.PERMISSION_GRANTED;
     }
+
 }

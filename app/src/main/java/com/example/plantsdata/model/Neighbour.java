@@ -7,10 +7,21 @@ public class Neighbour {
     String name;
     int occurrences;
 
-    public Neighbour(Bitmap image, String name, int occurrences) {
+    public int getPlant_id() {
+        return plant_id;
+    }
+
+    public void setPlant_id(int plant_id) {
+        this.plant_id = plant_id;
+    }
+
+    int plant_id;
+
+    public Neighbour(Bitmap image, String name, int occurrences, int plant_id) {
         this.image = image;
         this.name = name;
         this.occurrences = occurrences;
+        this.plant_id = plant_id;
     }
 
     public Bitmap getImage() {
