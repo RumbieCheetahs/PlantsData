@@ -73,7 +73,7 @@
 
             <TextView
                 android:id="@+id/locationHeading"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Location of tree"
                 android:layout_marginTop="12dp"
@@ -82,15 +82,33 @@
                 android:textColor="#000000"
                 android:layout_below="@id/treeCardView"/>
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get Location"
+                android:layout_toEndOf="@id/locationHeading"
+                android:textAllCaps="false"
+                android:id="@+id/getLocation"
+                android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_location"
+                android:layout_marginLeft="16dp"
+                android:padding="12dp"
+                android:drawablePadding="12dp"
+                android:onClick="getLocation"
+                android:background="#F24BC84D"
+                android:layout_below="@id/treeCardView"
+                android:layout_toRightOf="@id/locationHeading"
+                android:drawableLeft="@drawable/ic_location"
+                android:layout_marginStart="16dp" />
+
             <LinearLayout
                 android:id="@+id/layoutLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="12dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
-                android:layout_below="@id/locationHeading">
+                android:layout_below="@id/getLocation">
                 <TextView
                     android:id="@+id/latitude"
                     android:layout_width="0dp"

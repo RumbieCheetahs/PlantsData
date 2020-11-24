@@ -189,16 +189,6 @@ public class AddPlantStatus extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        gpsTracker = new GpsTracker(AddPlantStatus.this);
-        if(gpsTracker.canGetLocation()){
-            mLatitude = gpsTracker.getLatitude();
-            mLongitude = gpsTracker.getLongitude();
-            tvLatitude.setText(String.valueOf(mLatitude));
-            tvLongitude.setText(String.valueOf(mLongitude));
-        }else{
-            gpsTracker.showSettingsAlert();
-        }
-
     }
 
     public void next(View view){
@@ -354,4 +344,15 @@ public class AddPlantStatus extends AppCompatActivity {
         return write_external_storage_result == PackageManager.PERMISSION_GRANTED && record_audio_result == PackageManager.PERMISSION_GRANTED;
     }
 
+    public void getLocation(View view) {
+        gpsTracker = new GpsTracker(AddPlantStatus.this);
+        if(gpsTracker.canGetLocation()){
+            mLatitude = gpsTracker.getLatitude();
+            mLongitude = gpsTracker.getLongitude();
+            tvLatitude.setText(String.valueOf(mLatitude));
+            tvLongitude.setText(String.valueOf(mLongitude));
+        }else{
+            gpsTracker.showSettingsAlert();
+        }
+    }
 }
