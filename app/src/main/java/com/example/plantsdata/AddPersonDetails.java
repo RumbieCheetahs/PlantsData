@@ -52,6 +52,10 @@ public class AddPersonDetails extends AppCompatActivity {
         objectIntent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(objectIntent, IMAGE_CAPTURE_CODE);
     }
+    private void openCamera2() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, IMAGE_CAPTURE_CODE);
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -107,6 +111,21 @@ public class AddPersonDetails extends AppCompatActivity {
             }
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void addPersonCamera(View view) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
+                String[] permission = {Manifest.permission.CAMERA};
+                requestPermissions(permission, PERMISSION_CODE);
+            } else {
+                // permission granted
+                openCamera2();
+            }
+        } else {
+            // system OS less than marshmallow
+            openCamera2();
         }
     }
 }

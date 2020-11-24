@@ -49,20 +49,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                    <Button
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_photo"
-                        android:drawableStart="@drawable/ic_photo"
-                        android:padding="16dp"
-                        android:onClick="addPerson"
-                        android:textAllCaps="false"
-                        android:background="#F24BC84D"
-                        android:text="@string/person_image_instruction"/>
+                        android:orientation="horizontal">
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_photo"
+                            android:drawableStart="@drawable/ic_photo"
+                            android:padding="16dp"
+                            android:onClick="addPerson"
+                            android:layout_marginRight="3dp"
+                            android:textAllCaps="false"
+                            android:background="#F24BC84D"
+                            android:text="Choose from gallery"/>
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_photo"
+                            android:drawableStart="@drawable/ic_photo"
+                            android:padding="16dp"
+                            android:onClick="addPersonCamera"
+                            android:textAllCaps="false"
+                            android:background="#F24BC84D"
+                            android:layout_marginLeft="3dp"
+                            android:text="Take image from camera"/>
+                    </LinearLayout>
                     <ImageView
                         android:id="@+id/treeImage"
                         android:layout_width="match_parent"
                         android:layout_height="250dp"
+                        android:layout_marginTop="4dp"
                         android:onClick="addPerson"
                         app:srcCompat="@drawable/ic_himba_woman"/>
                 </LinearLayout>
