@@ -24,6 +24,7 @@ import com.example.plantsdata.model.PersonImage;
 public class AddPersonDetails extends AppCompatActivity {
     private static final int PERMISSION_CODE = 1000;
     private static final int IMAGE_CAPTURE_CODE = 1001;
+    private static final int IMAGE_SELECT_CODE = 1002;
     ImageView mImageView;
     Uri imageUri;
     private Bitmap imageToStore;
@@ -51,7 +52,7 @@ public class AddPersonDetails extends AppCompatActivity {
         Intent objectIntent = new Intent();
         objectIntent.setType("image/*");
         objectIntent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(objectIntent, IMAGE_CAPTURE_CODE);
+        startActivityForResult(objectIntent, IMAGE_SELECT_CODE);
     }
     private void openCamera2() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -76,10 +77,17 @@ public class AddPersonDetails extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         try {
-            if (requestCode == IMAGE_CAPTURE_CODE && resultCode == RESULT_OK) {
+            if (requestCode == IMAGE_SELECT_CODE && resultCode == RESULT_OK) {
                 imageUri = data.getData();
                 imageToStore = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                 mImageView.setImageBitmap(imageToStore);
+            }
+            else if (requestCode == IMAGE_CAPTURE_CODE && resultCode == RESULT_OK){
+                imageToStore = (Bitmap) data.getExtras().get("data");
+                mImageView.setImageBitmap(imageToStore);
+            }
+            else {
+                Toast.makeText(this, "Some error happened.", Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
