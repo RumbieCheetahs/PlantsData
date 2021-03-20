@@ -33,6 +33,7 @@ public class AddPlantHealth extends AppCompatActivity {
     Uri imageUri;
     private DatabaseHandler mDatabaseHandler;
     private Bitmap mCaptureImage;
+    long total;
 
     EditText plantHeight, plantCircumference, insectTypes;
 
@@ -47,11 +48,11 @@ public class AddPlantHealth extends AppCompatActivity {
         insectTypes = findViewById(R.id.insectTypes);
 
         mDatabaseHandler = new DatabaseHandler(this);
+        total = mDatabaseHandler.getProfilesCount() - 1;
     }
 
     public void next(View view) {
         storeImage();
-        startActivity(new Intent(AddPlantHealth.this, AddPlantStatus.class));
     }
 
     public void increaseInteger(View view) {
@@ -126,7 +127,8 @@ public class AddPlantHealth extends AppCompatActivity {
                 double circumference = Double.parseDouble(plantCircumference.getText().toString());
 
                 // TODO submit data to database;
-                mDatabaseHandler.leafImage(new LeafImage(mCaptureImage ,height, circumference, number, insectTypes.getText().toString()));
+                mDatabaseHandler.leafImage(new LeafImage(mCaptureImage ,height, circumference, number, insectTypes.getText().toString(), (int) total));
+                startActivity(new Intent(AddPlantHealth.this, AddPlantStatus.class));
             } else {
                 Toast.makeText(this, "Please add leaf image and other requirements.", Toast.LENGTH_SHORT).show();
             }

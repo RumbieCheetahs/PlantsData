@@ -11,8 +11,9 @@ public class SoilImage {
     String leaves;
     double latitude;
     double longtitude;
+    int plant_id;
 
-    public SoilImage(Bitmap soil, String plantHealth, String fruit, String flower, String leaves, double latitude, double longtitude) {
+    public SoilImage(Bitmap soil, String plantHealth, String fruit, String flower, String leaves, double latitude, double longtitude, int plant_id) {
         this.soil = soil;
         this.plantHealth = plantHealth;
         this.fruit = fruit;
@@ -20,6 +21,15 @@ public class SoilImage {
         this.leaves = leaves;
         this.latitude = latitude;
         this.longtitude = longtitude;
+        this.plant_id = plant_id;
+    }
+
+    public int getPlant_id() {
+        return plant_id;
+    }
+
+    public void setPlant_id(int plant_id) {
+        this.plant_id = plant_id;
     }
 
     public Bitmap getSoil() {

@@ -32,12 +32,9 @@ import java.util.Locale;
 
 public class AddPlant extends AppCompatActivity {
 
-    private Uri imageFilePath;
-    private Bitmap imageToStore;
     private static final int PERMISSION_CODE = 1000;
     private static final int IMAGE_CAPTURE_CODE = 1001;
     ImageView mImageView;
-    Uri imageUri;
     TextView dateTime;
     EditText treeName;
     String date_n;
@@ -62,7 +59,6 @@ public class AddPlant extends AppCompatActivity {
 
     public void next(View view){
         storeImage();
-        startActivity(new Intent(AddPlant.this, AddPlantHealth.class));
     }
 
     public void newTree(View view) {
@@ -114,6 +110,7 @@ public class AddPlant extends AppCompatActivity {
 
                 // TODO submit data to database;
                 mDatabaseHandler.storePlant(new TreeImage(mCaptureImage ,treeName.getText().toString(), date_n));
+                startActivity(new Intent(AddPlant.this, AddPlantHealth.class));
             } else {
                 Toast.makeText(this, "Please add image and Image name", Toast.LENGTH_SHORT).show();
             }

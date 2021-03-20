@@ -29,6 +29,7 @@ public class AddPersonDetails extends AppCompatActivity {
     private Bitmap imageToStore;
     EditText personImage;
     private DatabaseHandler mDatabaseHandler;
+    long total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +39,12 @@ public class AddPersonDetails extends AppCompatActivity {
         mImageView = findViewById(R.id.treeImage);
         personImage = findViewById(R.id.neighbour);
         mDatabaseHandler = new DatabaseHandler(this);
+
+        total = mDatabaseHandler.getProfilesCount() - 1;
     }
 
     public void next(View view){
         storeImage();
-        startActivity(new Intent(AddPersonDetails.this, MainActivity.class));
-        finish();
     }
 
     private void openCamera() {
@@ -105,7 +106,9 @@ public class AddPersonDetails extends AppCompatActivity {
             if (mImageView.getDrawable() != null && !personImage.getText().toString().isEmpty() && imageToStore != null){
 
                 // TODO submit data to database;
-                mDatabaseHandler.personImage(new PersonImage(imageToStore, personImage.getText().toString()));
+                mDatabaseHandler.personImage(new PersonImage(imageToStore, personImage.getText().toString(), (int) total));
+                startActivity(new Intent(AddPersonDetails.this, MainActivity.class));
+                finish();
             } else {
                 Toast.makeText(this, "Please add image and Image name", Toast.LENGTH_SHORT).show();
             }

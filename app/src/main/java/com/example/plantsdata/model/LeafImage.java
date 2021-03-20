@@ -9,13 +9,23 @@ public class LeafImage {
     private Double treeCircumference;
     private int treeStems;
     private String insectTypes;
+    private int plant_id;
 
-    public LeafImage(Bitmap leafImage, Double treeHeight, Double treeCircumference, int treeStems, String insectTypes) {
+    public LeafImage(Bitmap leafImage, Double treeHeight, Double treeCircumference, int treeStems, String insectTypes, int plant_id) {
         this.leafImage = leafImage;
         this.treeHeight = treeHeight;
         this.treeCircumference = treeCircumference;
         this.treeStems = treeStems;
         this.insectTypes = insectTypes;
+        this.plant_id = plant_id;
+    }
+
+    public int getPlant_id() {
+        return plant_id;
+    }
+
+    public void setPlant_id(int plant_id) {
+        this.plant_id = plant_id;
     }
 
     public Bitmap getLeafImage() {

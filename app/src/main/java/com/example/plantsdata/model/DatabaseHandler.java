@@ -43,30 +43,37 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     "date TEXT);";
             String query2 = "CREATE TABLE IF NOT EXISTS "+ TABLE_TWO +" (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                    "plant_id INTEGER NOT NULL, "+
                     "leafImage BLOB, "+
                     "treeHeight DOUBLE, "+
                     "treeCircumference DOUBLE, "+
                     "treeStems INTEGER, "+
-                    "insectTypes TEXT);";
+                    "insectTypes TEXT, "+
+                    "FOREIGN KEY(plant_id) REFERENCES plant(id) ON UPDATE CASCADE ON DELETE CASCADE);";
             String query3 = "CREATE TABLE IF NOT EXISTS "+ TABLE_THREE +" (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                    "plant_id INTEGER NOT NULL, "+
                     "soilImage BLOB, "+
                     "plantStatus TEXT, "+
                     "fruit TEXT, "+
                     "flower TEXT, "+
                     "leaves TEXT, "+
                     "latitude DOUBLE, "+
-                    "longtitude DOUBLE);";
+                    "longtitude DOUBLE, "+
+                    "FOREIGN KEY(plant_id) REFERENCES plant(id) ON UPDATE CASCADE ON DELETE CASCADE);";
             String query4 = "CREATE TABLE IF NOT EXISTS "+ TABLE_FOUR +" (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                    "plant_id INTEGER, "+
+                    "plant_id INTEGER NOT NULL, "+
                     "neighborImage BLOB, "+
                     "nameOfNeighbour TEXT, "+
-                    "occurrences INTEGER);";
+                    "occurrences INTEGER, "+
+                    "FOREIGN KEY(plant_id) REFERENCES plant(id) ON UPDATE CASCADE ON DELETE CASCADE);";
             String query5 = "CREATE TABLE IF NOT EXISTS "+ TABLE_FIVE +" (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                    "plant_id INTEGER NOT NULL, "+
                     "personImage BLOB, "+
-                    "name TEXT);";
+                    "name TEXT, "+
+                    "FOREIGN KEY(plant_id) REFERENCES plant(id) ON UPDATE CASCADE ON DELETE CASCADE);";
 
             // Run queries
             db.execSQL(query1);
@@ -81,6 +88,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    }
+
+    @Override
+    public void onOpen(SQLiteDatabase db) {
+        super.onOpen(db);
+        db.execSQL("PRAGMA foreign_keys=ON;");
     }
 
     public long getProfilesCount() {
@@ -126,6 +139,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
             imageInBytes = objectByteArrayOutputStream.toByteArray();
             ContentValues objectContentValues = new ContentValues();
+            objectContentValues.put("plant_id", leafImage.getPlant_id());
+            objectContentValues.put("plant_id", leafImage.getPlant_id());
             objectContentValues.put("leafImage", imageInBytes);
             objectContentValues.put("treeHeight", leafImage.getTreeHeight());
             objectContentValues.put("treeCircumference", leafImage.getTreeCircumference());
@@ -154,6 +169,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
             imageInBytes = objectByteArrayOutputStream.toByteArray();
             ContentValues objectContentValues = new ContentValues();
+            objectContentValues.put("plant_id", soilImage.getPlant_id());
             objectContentValues.put("soilImage", imageInBytes);
             objectContentValues.put("plantStatus", soilImage.getPlantHealth());
             objectContentValues.put("fruit", soilImage.getFruit());
@@ -184,6 +200,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
             imageInBytes = objectByteArrayOutputStream.toByteArray();
             ContentValues objectContentValues = new ContentValues();
+            objectContentValues.put("plant_id", personImage.getPlant_id());
             objectContentValues.put("personImage", imageInBytes);
             objectContentValues.put("name", personImage.getName());
 

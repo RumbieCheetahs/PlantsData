@@ -61,6 +61,8 @@ public class AddPlantStatus extends AppCompatActivity {
     private double mLatitude;
     private double mLongitude;
 
+    long total;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -177,6 +179,7 @@ public class AddPlantStatus extends AppCompatActivity {
         chronometer.setBase(SystemClock.elapsedRealtime());
 
         mDatabaseHandler = new DatabaseHandler(this);
+        total = mDatabaseHandler.getProfilesCount() - 1;
 
         tvLatitude = (TextView)findViewById(R.id.latitude);
         tvLongitude = (TextView)findViewById(R.id.longitude);
@@ -195,7 +198,6 @@ public class AddPlantStatus extends AppCompatActivity {
         getCheckedCheckbox();
         resetChronometer();
         storeImage();
-        startActivity(new Intent(AddPlantStatus.this, AddPlantNeighbors.class));
     }
 
     private void openCamera() {
@@ -208,7 +210,7 @@ public class AddPlantStatus extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode){
             case PERMISSION_CODE:
-                {
+            {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     openCamera();
                 } else {
@@ -289,7 +291,8 @@ public class AddPlantStatus extends AppCompatActivity {
             if (mImageView.getDrawable() != null){
 
                 // TODO submit data to database;
-                mDatabaseHandler.soilImage(new SoilImage(mCaptureImage, status, hasFruit, hasFlower, hasLeaves, mLatitude, mLongitude));
+                mDatabaseHandler.soilImage(new SoilImage(mCaptureImage, status, hasFruit, hasFlower, hasLeaves, mLatitude, mLongitude, (int) total));
+                startActivity(new Intent(AddPlantStatus.this, AddPlantNeighbors.class));
             } else {
                 Toast.makeText(this, "Please add image and Image name", Toast.LENGTH_SHORT).show();
             }
