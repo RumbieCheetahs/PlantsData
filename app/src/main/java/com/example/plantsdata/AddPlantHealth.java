@@ -48,7 +48,7 @@ public class AddPlantHealth extends AppCompatActivity {
         insectTypes = findViewById(R.id.insectTypes);
 
         mDatabaseHandler = new DatabaseHandler(this);
-        total = mDatabaseHandler.getProfilesCount() - 1;
+        total = mDatabaseHandler.getProfilesCount();
     }
 
     public void next(View view) {

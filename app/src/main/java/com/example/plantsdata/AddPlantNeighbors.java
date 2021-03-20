@@ -41,7 +41,7 @@ public class AddPlantNeighbors extends AppCompatActivity {
         occurrences = findViewById(R.id.occurrence);
         mDatabaseHandler = new DatabaseHandler(this);
 
-        total = mDatabaseHandler.getProfilesCount() - 1;
+        total = mDatabaseHandler.getProfilesCount();
     }
 
     public void next(View view){

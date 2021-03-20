@@ -179,7 +179,7 @@ public class AddPlantStatus extends AppCompatActivity {
         chronometer.setBase(SystemClock.elapsedRealtime());
 
         mDatabaseHandler = new DatabaseHandler(this);
-        total = mDatabaseHandler.getProfilesCount() - 1;
+        total = mDatabaseHandler.getProfilesCount();
 
         tvLatitude = (TextView)findViewById(R.id.latitude);
         tvLongitude = (TextView)findViewById(R.id.longitude);

@@ -40,7 +40,7 @@ public class AddPersonDetails extends AppCompatActivity {
         personImage = findViewById(R.id.neighbour);
         mDatabaseHandler = new DatabaseHandler(this);
 
-        total = mDatabaseHandler.getProfilesCount() - 1;
+        total = mDatabaseHandler.getProfilesCount();
     }
 
     public void next(View view){
