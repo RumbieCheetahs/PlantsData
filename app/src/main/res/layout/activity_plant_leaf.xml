@@ -4,16 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d9dfe0"
-    tools:context=".AddPlantNeighbors"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    tools:context=".PlantLeafActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:id="@+id/layout"
                 android:layout_width="match_parent"
@@ -24,12 +22,12 @@
                     android:id="@+id/homeIcon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:tint="#F24BC84D"
-                    app:srcCompat="@drawable/ic_add"/>
+                    android:src="@drawable/status"
+                    app:tint="#F24BC84D" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="@string/neighbor"
+                    android:text="@string/tree_leaf"
                     android:textSize="16sp"
                     android:fontFamily="@font/bold"
                     android:layout_marginLeft="16dp"
@@ -57,48 +55,19 @@
                         android:drawableStart="@drawable/ic_photo"
                         android:padding="16dp"
                         android:textAllCaps="false"
-                        android:onClick="addNeighbour"
-                        android:fontFamily="@font/semi_bold"
                         android:background="#F24BC84D"
-                        android:text="@string/neighbor_instruction"/>
+                        android:text="@string/leaf_instruction"/>
                     <ImageView
                         android:id="@+id/treeImage"
                         android:layout_width="match_parent"
                         android:layout_height="250dp"
-                        android:onClick="addNeighbour"
-                        android:src="@drawable/surrounding"
+                        app:srcCompat="@drawable/ic_mopane_leaf"
+                        android:background="#F24BC84D"
+                        android:onClick="addLeaf"
                         android:scaleType="centerCrop"/>
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-            <EditText
-                android:id="@+id/neighbour"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/neighbor_name"
-                android:layout_marginTop="32dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:padding="12dp"
-                android:drawableLeft="@drawable/ic_add"
-                android:drawableTint="#F24BC84D"
-                android:drawablePadding="12dp"
-                android:layout_below="@id/treeCardView"/>
-            <EditText
-                android:id="@+id/occurrence"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/existence"
-                android:layout_marginTop="32dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:padding="12dp"
-                android:inputType="number"
-                android:drawableLeft="@drawable/ic_add"
-                android:drawableTint="#F24BC84D"
-                android:drawablePadding="12dp"
-                android:layout_below="@id/neighbour"
-                android:drawableStart="@drawable/ic_add" />
 
             <Button
                 android:id="@+id/proceedOne"
@@ -112,10 +81,9 @@
                 android:layout_marginTop="48dp"
                 android:layout_marginBottom="48dp"
                 android:textAllCaps="false"
-                android:fontFamily="@font/bold"
                 android:onClick="next"
                 android:background="#F24BC84D"
-                android:layout_below="@id/occurrence"
+                android:layout_below="@id/treeCardView"
                 android:gravity="center_horizontal"
                 android:drawableEnd="@drawable/ic_next" />
         </RelativeLayout>

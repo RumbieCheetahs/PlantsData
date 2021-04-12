@@ -6,16 +6,13 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,9 +21,7 @@ import android.widget.Toast;
 import com.example.plantsdata.model.DatabaseHandler;
 import com.example.plantsdata.model.TreeImage;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.Locale;
 
@@ -52,7 +47,10 @@ public class AddPlant extends AppCompatActivity {
 
         dateTime = findViewById(R.id.dateTime);
         dateTime.setText(date_n);
+
+
         mImageView = findViewById(R.id.treeImage);
+
         treeName = findViewById(R.id.treeName);
         mDatabaseHandler = new DatabaseHandler(this);
     }
@@ -110,7 +108,7 @@ public class AddPlant extends AppCompatActivity {
 
                 // TODO submit data to database;
                 mDatabaseHandler.storePlant(new TreeImage(mCaptureImage ,treeName.getText().toString(), date_n));
-                startActivity(new Intent(AddPlant.this, AddPlantHealth.class));
+                startActivity(new Intent(AddPlant.this, AddPlantStatus.class));
             } else {
                 Toast.makeText(this, "Please add image and Image name", Toast.LENGTH_SHORT).show();
             }

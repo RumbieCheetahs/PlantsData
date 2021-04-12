@@ -25,14 +25,14 @@
                         android:id="@+id/homeIcon"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:tint="#F24BC84D"
-                        app:srcCompat="@drawable/ic_add"/>
+                        app:srcCompat="@drawable/ic_add"
+                        app:tint="#F24BC84D" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:text="@string/add_new_tree"
                         android:textSize="16sp"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/bold"
                         android:layout_marginLeft="16dp"
                         android:gravity="center_vertical"
                         android:layout_marginStart="16dp" />
@@ -60,6 +60,7 @@
                             android:padding="16dp"
                             android:onClick="newTree"
                             android:textAllCaps="false"
+                            android:fontFamily="@font/semi_bold"
                             android:background="#F24BC84D"
                             android:text="@string/plant_instruction"/>
                         <ImageView
@@ -82,6 +83,7 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
                     android:hint="@string/plant_name"
+                    android:fontFamily="@font/light"
                     android:textColor="#000000"
                     android:padding="12dp" />
 
@@ -97,6 +99,7 @@
                     android:drawablePadding="16dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/semi_bold"
                     android:drawableTint="#F24BC84D"
                     android:drawableStart="@drawable/ic_date"
                     android:drawableLeft="@drawable/ic_date" />
@@ -115,6 +118,7 @@
                     android:layout_marginTop="48dp"
                     android:layout_marginBottom="48dp"
                     android:background="#F24BC84D"
+                    android:fontFamily="@font/bold"
                     android:elevation="0dp"
                     android:layout_below="@id/dateTime"
                     android:gravity="center_horizontal"/>

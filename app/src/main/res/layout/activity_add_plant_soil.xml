@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d9dfe0"
+    tools:context=".AddPlantSoil"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="24dp">
+                <ImageView
+                    android:id="@+id/homeIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/ic_add"
+                    app:tint="#F24BC84D" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/soil"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/treeCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_below="@id/layout"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_photo"
+                        android:drawableStart="@drawable/ic_photo"
+                        android:padding="16dp"
+                        android:textAllCaps="false"
+                        android:onClick="addSoil"
+                        android:background="#F24BC84D"
+                        android:text="@string/soil_instruction"/>
+                    <ImageView
+                        android:id="@+id/treeImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:scaleType="centerCrop"
+                        android:onClick="addSoil"
+                        android:src="@drawable/soil"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/locationHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location of tree"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textColor="#000000"
+                android:layout_below="@id/treeCardView"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get Location"
+                android:layout_toEndOf="@id/locationHeading"
+                android:textAllCaps="false"
+                android:id="@+id/getLocation"
+                android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_location"
+                android:layout_marginLeft="16dp"
+                android:padding="12dp"
+                android:drawablePadding="12dp"
+                android:onClick="getLocation"
+                android:background="#F24BC84D"
+                android:layout_below="@id/treeCardView"
+                android:layout_toRightOf="@id/locationHeading"
+                android:drawableLeft="@drawable/ic_location"
+                android:layout_marginStart="16dp" />
+
+            <LinearLayout
+                android:id="@+id/layoutLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_below="@id/getLocation">
+                <TextView
+                    android:id="@+id/latitude"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Latitude"
+                    android:padding="12dp"
+                    android:textColor="#000000"/>
+                <TextView
+                    android:id="@+id/longitude"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Longtitude"
+                    android:padding="12dp"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/laylay"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_below="@id/layoutLayout">-->
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="@string/record_audio"-->
+<!--                    android:drawablePadding="12dp"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_marginLeft="24dp"-->
+<!--                    android:layout_marginRight="24dp"-->
+<!--                    android:drawableLeft="@drawable/ic_arrow_downward"-->
+<!--                    android:drawableTint="@color/colorPrimary"-->
+<!--                    android:drawableStart="@drawable/ic_arrow_downward" />-->
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="@string/play_audio"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:drawablePadding="12dp"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:drawableLeft="@drawable/ic_arrow_downward"-->
+<!--                    android:drawableTint="@color/colorPrimary"-->
+<!--                    android:drawableStart="@drawable/ic_arrow_downward" />-->
+<!--            </LinearLayout>-->
+<!--            <ImageButton-->
+<!--                android:id="@+id/mic"-->
+<!--                android:layout_width="60dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                app:srcCompat="@drawable/ic_mic"-->
+<!--                android:tint="#F24BC84D"-->
+<!--                android:onClick="onClick"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:layout_below="@id/laylay"/>-->
+<!--            <ImageButton-->
+<!--                android:id="@+id/play"-->
+<!--                android:layout_width="60dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                app:srcCompat="@drawable/ic_stop"-->
+<!--                android:tint="@android:color/holo_orange_dark"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:layout_below="@id/laylay"-->
+<!--                android:layout_toEndOf="@id/mic"-->
+<!--                android:layout_marginLeft="16dp"-->
+<!--                android:onClick="onClick"-->
+<!--                android:layout_marginRight="8dp"-->
+<!--                android:layout_toRightOf="@id/mic" />-->
+<!--            <Chronometer-->
+<!--                android:id="@+id/chronometer"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_marginLeft="24dp"-->
+<!--                android:layout_marginRight="24dp"-->
+<!--                android:layout_below="@id/play"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:padding="12dp"-->
+<!--                android:gravity="center_horizontal" />-->
+<!--            <ImageButton-->
+<!--                android:id="@+id/stop"-->
+<!--                android:layout_width="60dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                app:srcCompat="@drawable/ic_play"-->
+<!--                android:tint="#F29F1414"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:layout_below="@id/laylay"-->
+<!--                android:layout_toEndOf="@id/play"-->
+<!--                android:layout_marginLeft="16dp"-->
+<!--                android:onClick="onClick"-->
+<!--                android:layout_marginRight="24dp"-->
+<!--                android:layout_toRightOf="@id/play" />-->
+<!--            <ImageButton-->
+<!--                android:id="@+id/stopPlaying"-->
+<!--                android:layout_width="60dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                app:srcCompat="@drawable/ic_stop"-->
+<!--                android:tint="#F29F1414"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:layout_below="@id/laylay"-->
+<!--                android:layout_toEndOf="@id/stop"-->
+<!--                android:layout_marginLeft="16dp"-->
+<!--                android:onClick="onClick"-->
+<!--                android:layout_marginRight="24dp"-->
+<!--                android:layout_toRightOf="@id/stop" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/phenology"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Ekweze romuti "-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:textColor="#000000"-->
+<!--                android:layout_below="@id/chronometer"/>-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/layPhen"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_below="@id/phenology">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+<!--                    <ImageView-->
+<!--                        android:layout_width="32dp"-->
+<!--                        android:layout_height="32dp"-->
+<!--                        app:srcCompat="@drawable/ic_fruit"/>-->
+<!--                    <CheckBox-->
+<!--                        android:id="@+id/fruit"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:text="Ovihape"/>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+<!--                    <ImageView-->
+<!--                        android:layout_width="32dp"-->
+<!--                        android:layout_height="32dp"-->
+<!--                        app:srcCompat="@drawable/ic_mopane_flower"/>-->
+<!--                    <CheckBox-->
+<!--                        android:id="@+id/flower"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:text="Ozongara"/>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+<!--                    <ImageView-->
+<!--                        android:layout_width="32dp"-->
+<!--                        android:layout_height="32dp"-->
+<!--                        android:tint="#F24BC84D"-->
+<!--                        app:srcCompat="@drawable/ic_mopane_leaf"/>-->
+<!--                    <CheckBox-->
+<!--                        android:id="@+id/leaves"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:text="Oviyao"/>-->
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
+
+
+            <Button
+                android:id="@+id/proceedOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kaende : Next"
+                android:drawableRight="@drawable/ic_next"
+                android:padding="16dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="48dp"
+                android:onClick="next"
+                android:textAllCaps="false"
+                android:background="#F24BC84D"
+                android:layout_below="@id/layoutLayout"
+                android:gravity="center_horizontal"
+                android:drawableEnd="@drawable/ic_next" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

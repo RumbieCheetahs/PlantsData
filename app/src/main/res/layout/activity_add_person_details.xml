@@ -30,7 +30,7 @@
                     android:layout_height="40dp"
                     android:text="@string/add_person"
                     android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/bold"
                     android:layout_marginLeft="16dp"
                     android:gravity="center_vertical"
                     android:layout_marginStart="16dp" />
@@ -61,6 +61,7 @@
                             android:drawableStart="@drawable/ic_photo"
                             android:padding="16dp"
                             android:onClick="addPerson"
+                            android:fontFamily="@font/semi_bold"
                             android:layout_marginRight="3dp"
                             android:textAllCaps="false"
                             android:background="#F24BC84D"
@@ -74,6 +75,7 @@
                             android:padding="16dp"
                             android:onClick="addPersonCamera"
                             android:textAllCaps="false"
+                            android:fontFamily="@font/semi_bold"
                             android:background="#F24BC84D"
                             android:layout_marginLeft="3dp"
                             android:text="Take image from camera"/>
@@ -100,6 +102,7 @@
                 android:drawableLeft="@drawable/ic_person"
                 android:drawableTint="#F24BC84D"
                 android:drawablePadding="12dp"
+                android:fontFamily="@font/light"
                 android:layout_below="@id/treeCardView"
                 android:drawableStart="@drawable/ic_person" />
 
@@ -111,10 +114,11 @@
                 android:textAllCaps="false"
                 android:textSize="16sp"
                 android:padding="16dp"
-                android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
                 android:layout_marginTop="48dp"
                 android:layout_marginBottom="48dp"
+                android:fontFamily="@font/bold"
                 android:background="#F24BC84D"
                 android:drawableRight="@drawable/ic_upload"
                 android:onClick="next"
